@@ -51,36 +51,5 @@ def get_data(url, max_pages):
 
 #data = get_data(url, 20)
 
-#with open('raw_data.json', 'w') as f:
-#    f.write(json.dumps(data))
-
-with open('raw_data.json', 'r') as f:
-    data = json.loads(f.read())
-
-data_final = [{'day': dateutil.parser.parse(d['created_at']).toordinal()}
-              for d in data
-              if d['type'] == 'PushEvent']
-
-data_final = {}
-for d in data:
-    year = dateutil.parser.parse(d['created_at']).year
-    month = dateutil.parser.parse(d['created_at']).month
-    key = (year, month)
-    data_final[key] = data_final.get(key, 0) + 1
-
-#data_final = [{'events': v, 'date':datetime.date(k[0],k[1],1).toordinal()} 
-data_final = [{
-    'events': v,
-    'date':time.mktime(datetime.datetime(k[0],k[1],1).timetuple())*1000,
-              }
-              for (k, v) in data_final.items()]
-
-#data_final.sort(lambda x,y: x['date'] < y['date'])
-data_final.sort(key = lambda x: x['date'])
-
-print(data_final)
-
-json_data = json.dumps(data_final)
-
-with open('data0.json', 'w') as f:
-    f.write(json_data)
+with open('raw_data.json', 'w') as f:
+    f.write(json.dumps(data))
