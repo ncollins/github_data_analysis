@@ -42,10 +42,9 @@ def get_pages(url, max_pages):
     data = []
     for i in range(max_pages):
         new_data = get_page(url.format(i))
+        data.extend(new_data)
         if len(new_data) < 30:
             break
-        else:
-            data.extend(new_data)
     return data, i
 
 
