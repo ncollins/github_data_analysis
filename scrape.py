@@ -13,9 +13,9 @@ import datetime
 import time
 
 import login
+import hacker_school
 
 user_url = 'https://api.github.com/users/{}'
-url = 'https://api.github.com/users/ncollins/events?page={}'
 
 def setup_auth(domain, username, password):
     # create a password manager
@@ -35,21 +35,36 @@ def setup_auth(domain, username, password):
 
 
 def get_page(url):
-    new_data = json.loads(urllib2.urlopen(url.format(i)).read())
+    return json.loads(urllib2.urlopen(url).read())
 
 
 def get_pages(url, max_pages):
     data = []
     for i in range(max_pages):
         new_data = get_page(url.format(i))
-        if new_data == []:
+        if len(new_data) < 30:
             break
         else:
             data.extend(new_data)
-    return data
+    return data, i
 
 
 if __name__ == '__main__':
     setup_auth('api.github.com', login.username, login.password)
-    with open('raw_data.json', 'w') as f:
+
+    data = []
+    for person in hacker_school.people:
+        user_page = get_page(user_url.format(person))
+        d = {}
+        d['login'] = person
+        followers_url = user_page['followers_url']
+        followers_page, pagecount = get_pages(followers_url, 20)
+        followers = []
+        for f in followers_page:
+            if f['login'] in hacker_school.people:
+                followers.append(f['login'])
+        d['followers'] = followers
+        data.append(d)
+
+    with open('hackers.json', 'w') as f:
         f.write(json.dumps(data))
