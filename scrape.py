@@ -14,42 +14,42 @@ import time
 
 import login
 
+user_url = 'https://api.github.com/users/{}'
 url = 'https://api.github.com/users/ncollins/events?page={}'
 
-# create a password manager
-password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
-
-# Add the username and password.
-# If we knew the realm, we could use it instead of None.
-password_mgr.add_password(None,
-                          'https://api.github.com',
-                          login.username,
-                          login.password)
-
-handler = urllib2.HTTPBasicAuthHandler(password_mgr)
-
-# create "opener" (OpenerDirector instance)
-opener = urllib2.build_opener(handler)
-
-# use the opener to fetch a URL
-opener.open(a_url)
-
-# Install the opener.
-# Now all calls to urllib2.urlopen use our opener.
-urllib2.install_opener(opener)
+def setup_auth(domain, username, password):
+    # create a password manager
+    password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+    # Add the username and password.
+    # If we knew the realm, we could use it instead of None.
+    password_mgr.add_password(None,
+                              'https://api.github.com',
+                              login.username,
+                              login.password)
+    handler = urllib2.HTTPBasicAuthHandler(password_mgr)
+    # create "opener" (OpenerDirector instance)
+    opener = urllib2.build_opener(handler)
+    # Install the opener.
+    # Now all calls to urllib2.urlopen use our opener.
+    urllib2.install_opener(opener)
 
 
-def get_data(url, max_pages):
+def get_page(url):
+    new_data = json.loads(urllib2.urlopen(url.format(i)).read())
+
+
+def get_pages(url, max_pages):
     data = []
     for i in range(max_pages):
-        new_data = json.loads(urllib2.urlopen(url.format(i)).read())
+        new_data = get_page(url.format(i))
         if new_data == []:
             break
         else:
             data.extend(new_data)
     return data
 
-#data = get_data(url, 20)
 
-with open('raw_data.json', 'w') as f:
-    f.write(json.dumps(data))
+if __name__ == '__main__':
+    setup_auth('api.github.com', login.username, login.password)
+    with open('raw_data.json', 'w') as f:
+        f.write(json.dumps(data))
