@@ -6,13 +6,10 @@ from __future__ import unicode_literals
 from __future__ import division
 from __future__ import absolute_import
 
-import urllib2
 import json
 import dateutil
 import datetime
 import time
-
-import login
 
 with open('raw_data.json', 'r') as f:
     data = json.loads(f.read())
