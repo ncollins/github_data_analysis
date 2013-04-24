@@ -6,12 +6,7 @@ from __future__ import unicode_literals
 from __future__ import division
 from __future__ import absolute_import
 
-import urllib2
 import json
-import dateutil
-import datetime
-import time
-
 import requests
 
 import login
@@ -19,28 +14,10 @@ import hacker_school
 
 user_url = 'https://api.github.com/users/{}'
 
-def setup_auth(domain, username, password):
-    # create a password manager
-    password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
-    # Add the username and password.
-    # If we knew the realm, we could use it instead of None.
-    password_mgr.add_password(None,
-                              'https://api.github.com',
-                              login.username,
-                              login.password)
-    handler = urllib2.HTTPBasicAuthHandler(password_mgr)
-    # create "opener" (OpenerDirector instance)
-    opener = urllib2.build_opener(handler)
-    # Install the opener.
-    # Now all calls to urllib2.urlopen use our opener.
-    urllib2.install_opener(opener)
-
-
 def get_page(url):
     try:
         r = requests.get(url, auth=(login.username, login.password))
         return r.json()
-        #return json.loads(urllib2.urlopen(url).read())
     except Exception as e:
         print('Error getting: {}'.format(url))
         return None
@@ -58,8 +35,6 @@ def get_pages(url, max_pages):
 
 
 if __name__ == '__main__':
-    setup_auth('api.github.com', login.username, login.password)
-
     data = []
     for person in hacker_school.people:
         user_page = get_page(user_url.format(person))
