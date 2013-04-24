@@ -12,6 +12,8 @@ import dateutil
 import datetime
 import time
 
+import requests
+
 import login
 import hacker_school
 
@@ -35,12 +37,19 @@ def setup_auth(domain, username, password):
 
 
 def get_page(url):
-    return json.loads(urllib2.urlopen(url).read())
+    try:
+        r = requests.get(url, auth=(login.username, login.password))
+        return r.json()
+        #return json.loads(urllib2.urlopen(url).read())
+    except Exception as e:
+        print('Error getting: {}'.format(url))
+        return None
 
 
 def get_pages(url, max_pages):
     data = []
     for i in range(max_pages):
+        print('GET: {}'.format(url.format(i)))
         new_data = get_page(url.format(i))
         data.extend(new_data)
         if len(new_data) < 30:
@@ -57,7 +66,7 @@ if __name__ == '__main__':
         d = {}
         d['login'] = person
         followers_url = user_page['followers_url']
-        followers_page, pagecount = get_pages(followers_url, 20)
+        followers_page, pagecount = get_pages(followers_url+'?page={}', 20)
         followers = []
         for f in followers_page:
             if f['login'] in hacker_school.people:
