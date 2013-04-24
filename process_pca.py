@@ -18,19 +18,24 @@ for person in data:
 features.difference_update(['followers', 'login'])
 orderedfeatures = list(features)
 
-darray = np.ndarray((len(data), len(features)))
+full_array = np.ndarray((len(data), len(features)))
 
 for row, p in enumerate(data):
     for col, f in enumerate(orderedfeatures):
-        darray[row, col] = p.get(f, 0)
+        full_array[row, col] = p.get(f, 0)
 
-top10 = sorted([(l, int(c)) for l, c in zip(orderedfeatures, np.sum(darray, 0))
+top10 = sorted([(l, int(c)) for l, c in zip(orderedfeatures, np.sum(full_array, 0))
                 if l[:5] == 'lang:' and not l == 'lang:None'],
                reverse = True,
                key = lambda pair: pair[1])[:10]
 
-w, v = np.linalg.eig(np.cov(darray))
-#w, v = np.linalg.eig(np.corrcoef(darray))
+reduced_array = np.ndarray((len(data), 10))
+for row, p in enumerate(data):
+    for col, (f, c) in enumerate(top10):
+        reduced_array[row, col] = p.get(f, 0) / p.get('own_repo_count', 1)
+
+w, v = np.linalg.eig(np.cov(reduced_array.T))
+#w, v = np.linalg.eig(np.corrcoef(reduced_array.T))
 
 ordering = w.argsort()
 
