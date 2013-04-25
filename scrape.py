@@ -37,9 +37,14 @@ def get_pages(url, max_pages=100):
 if __name__ == '__main__':
     data = []
     for person in hacker_school.people:
-        user_page = get_page(user_url.format(person))
+        if person == 'hackerschool':
+            user_page = get_page('https://api.github.com/orgs/hackerschool')
+        else:
+            user_page = get_page(user_url.format(person))
+
         d = {}
         d['login'] = person
+        d['url'] = user_page['html_url']
 
         # followers
         followers_url = user_page['followers_url'] + '?page={}'
@@ -54,6 +59,7 @@ if __name__ == '__main__':
         # repos
         repos_url = user_page['repos_url'] + '?page={}'
         repos_json, _ = get_pages(repos_url)
+        d['repos'] = repos_json
         for repo in repos_json:
             #print(repo)
             size = repo['size']
@@ -67,8 +73,13 @@ if __name__ == '__main__':
                 d['lang:'+language] = d.get('lang:'+language, 0) + 1
                 d['own_repo_count'] = d.get('own_repo_count', 0) + 1
 
+        # events
+        events_url = user_page['events_url'].replace('{/privacy}','') + '?page={}'
+        events_json, _ = get_pages(events_url)
+        d['events'] = events_json
+
         # add to main json data
         data.append(d)
 
-    with open('hackers.json', 'w') as f:
+    with open('data/hackers.json', 'w') as f:
         f.write(json.dumps(data))
