@@ -9,13 +9,13 @@ from __future__ import absolute_import
 import json
 import numpy as np
 
-with open('hackers.json', 'r') as f:
+with open('data/hackers.json', 'r') as f:
     data = json.loads(f.read())
 
 features = set()
 for person in data:
     features.update(person.keys())
-features.difference_update(['followers', 'login'])
+features.difference_update(['events', 'followers', 'login', 'url', 'repos'])
 orderedfeatures = list(features)
 
 full_array = np.ndarray((len(data), len(features)))
@@ -29,10 +29,18 @@ top10 = sorted([(l, int(c)) for l, c in zip(orderedfeatures, np.sum(full_array, 
                reverse = True,
                key = lambda pair: pair[1])[:10]
 
-reduced_array = np.ndarray((len(data), 10))
+#top10avg = [(l, c/len(data)) for l,c in top10]
+
+reduced_array = np.ndarray((len(data), 10+1))
 for row, p in enumerate(data):
+    all_repos = p.get('own_repo_count', 1)
     for col, (f, c) in enumerate(top10):
-        reduced_array[row, col] = p.get(f, 0) / p.get('own_repo_count', 1)
+        reduced_array[row, col] = p.get(f, 0) #/ all_repos
+    # other langs
+    reduced_array[row, 10] = all_repos - sum(reduced_array[row, :10])
+    reduced_array[row] = reduced_array[row] - all_repos/11
+
+reduced_array = reduced_array - np.average(reduced_array, 0)
 
 w, v = np.linalg.eig(np.cov(reduced_array.T))
 #w, v = np.linalg.eig(np.corrcoef(reduced_array.T))
@@ -42,20 +50,18 @@ ordering = w.argsort()
 w0, w1 = w[ordering[-1]], w[ordering[-2]]
 v0, v1 = v[ordering[-1]], v[ordering[-2]]
 
-#position_dict = {}
-#for i, p in enumerate(data):
-#    login = p['login']
-#    position_dict[login] = i
-#    data_graph['nodes'].append({'name': login})
+for i, (f, c) in enumerate(top10):
+    print(round(v0[i],1), '\t', round(v1[i],1), '\t', f)
 
-#for p in data:
-#    i = position_dict[p['login']]
-#    for f in p['followers']:
-#        j = position_dict[f]
-#        data_graph['links'].append({'source': j, 'target': i})
+data_2d = []
+for i, p in enumerate(data):
+    x = sum(v0 * reduced_array[i])
+    y = sum(v1 * reduced_array[i])
+    login = p['login']
+    url = p['url']
+    data_2d.append({'x': x, 'y': y, 'login': login, 'url': url})
 
+json_data = json.dumps(data_2d)
 
-#json_data = json.dumps(data_graph)
-
-#with open('hackers_graph.json', 'w') as f:
-#    f.write(json_data)
+with open('data/hackers_pca.json', 'w') as f:
+    f.write(json_data)
