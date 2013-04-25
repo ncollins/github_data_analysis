@@ -8,7 +8,7 @@ from __future__ import absolute_import
 
 import json
 
-with open('hackers.json', 'r') as f:
+with open('data/hackers.json', 'r') as f:
     data = json.loads(f.read())
 
 data_graph = {
@@ -31,5 +31,5 @@ for p in data:
 
 json_data = json.dumps(data_graph)
 
-with open('hackers_graph.json', 'w') as f:
+with open('data/hackers_graph.json', 'w') as f:
     f.write(json_data)

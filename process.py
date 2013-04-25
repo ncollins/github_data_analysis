@@ -11,7 +11,7 @@ import dateutil
 import datetime
 import time
 
-with open('raw_data.json', 'r') as f:
+with open('data/raw_data.json', 'r') as f:
     data = json.loads(f.read())
 
 data_final = {}
@@ -31,5 +31,5 @@ data_final.sort(key = lambda x: x['date'])
 
 json_data = json.dumps(data_final)
 
-with open('data0.json', 'w') as f:
+with open('data/data0.json', 'w') as f:
     f.write(json_data)
