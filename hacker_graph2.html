@@ -97,6 +97,18 @@
           return d.url
         });
 
+        d3.select('body')
+        .append('div')
+        .selectAll('img')
+        .data(data.nodes)
+        .enter()
+        .append('img')
+        .attr('height', '40px')
+        .attr('width', '40px')
+        .attr('src', function(d) {return d.avatar_url})
+        .on('click', function(d) { alert(d.login) })
+        .attr('title', function(d) {return d.login});
+
       }
     </script>
   </head>
