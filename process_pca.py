@@ -12,7 +12,7 @@ import numpy as np
 
 import hacker_school
 
-with open('data/hackers.json', 'r') as f:
+with open('website/data/hackers.json', 'r') as f:
     data = json.loads(f.read())
 
 features = set()
@@ -56,6 +56,10 @@ v0, v1 = v[ordering[-1]], v[ordering[-2]]
 for i, (f, c) in enumerate(top10):
     print(round(v0[i],1), '\t', round(v1[i],1), '\t', f)
 
+people = dict([(p['login'], p) for p in data])
+people_set = set(people.keys())
+people_numbers = dict([(p['login'], i) for i, p in enumerate(data)])
+
 data_nodes = []
 for i, p in enumerate(data):
     x = sum(v0 * reduced_array[i])
@@ -63,21 +67,15 @@ for i, p in enumerate(data):
     login = p['login']
     url = p['url']
     avatar_url = p.get('avatar_url', '')
-    data_nodes.append({'x': x, 'y': y, 'login': login, 'url': url, 'avatar_url': avatar_url})
+    data_nodes.append({'x': x, 'y': y, 'login': login, 'url': url,
+                       'avatar_url': avatar_url, 'id': people_numbers[login]})
 
 data_all = {'nodes': data_nodes, 'links': []}
 
-#for p1, p2 in zip(data_nodes[:-1], data_nodes[1:]):
-#    data_all['links'].append({'x1': p1['x'],
-#                              'y1': p1['y'],
-#                              'x2': p2['x'],
-#                              'y2': p2['y']})
+key_events = set(['PullRequestEvent', 'PushEvent', 'IssueCommentEvent', 'IssuesEvent'])
 
 people = dict([(p['login'], p) for p in data_nodes])
 people_set = set(people.keys())
-people_numbers = dict([(p['login'], i) for i, p in enumerate(data_nodes)])
-
-key_events = set(['PullRequestEvent', 'PushEvent', 'IssueCommentEvent', 'IssuesEvent'])
 
 for person in data:
     #
@@ -97,12 +95,13 @@ for person in data:
                     'target': people_numbers[c],
                    }
             data_all['links'].append(link)
-        except:
+        except Exception as e:
+            print(e)
             # TODO: fix this!
             pass
 
 
 json_data = json.dumps(data_all, indent=1)
 
-with open('data/hackers_pca.json', 'w') as f:
+with open('website/data/hackers_pca.json', 'w') as f:
     f.write(json_data)

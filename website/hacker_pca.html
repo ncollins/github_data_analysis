@@ -29,6 +29,7 @@
     </style>
 
     <script type="text/javascript" src="js/d3.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
 
     <script>
       function draw(data) {
@@ -71,8 +72,7 @@
         .call(y_axis);
 
         d3.select('svg')
-        .selectAll('lines')
-        //.data(dataline)
+        .selectAll('line')
         .data(data.links)
         .enter()
         .append('svg:line')
@@ -106,8 +106,38 @@
         .attr('height', '40px')
         .attr('width', '40px')
         .attr('src', function(d) {return d.avatar_url})
-        .on('click', function(d) { alert(d.login) })
-        .attr('title', function(d) {return d.login});
+        .attr('title', function(d) {return d.login})
+        .on('click', function(d) {
+          var hacker = d.id;
+          var filteredlinks = _.filter(data.links,
+                          function(l) { return l.source == hacker || l.target == hacker });
+          //alert("hello");
+
+          var lines = d3.select('svg')
+          .selectAll('line')
+          .data([])
+          .exit()
+          .remove();
+
+          console.log(filteredlinks);
+          //lines.exit().remove();
+
+          var lines = d3.select('svg')
+          .selectAll('line')
+          .data(filteredlinks)
+          .enter()
+          .append('svg:line')
+          .attr('x1', function(d) {return x_scale(d.x1)})
+          .attr('y1', function(d) {return y_scale(d.y1)})
+          .attr('x2', function(d) {return x_scale(d.x2)})
+          .attr('y2', function(d) {return y_scale(d.y2)})
+          .style('stroke', 'rgb(6, 120, 155)')
+          .style('stroke-width', 3);
+
+          
+        });
+
+
 
       }
     </script>
