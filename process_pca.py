@@ -7,6 +7,7 @@ from __future__ import division
 from __future__ import absolute_import
 
 import json
+import collections
 import numpy as np
 
 import hacker_school
@@ -73,13 +74,16 @@ data_all = {'nodes': data_nodes, 'links': []}
 
 people = dict([(p['login'], p) for p in data_nodes])
 people_set = set(people.keys())
+people_numbers = dict([(p['login'], i) for i, p in enumerate(data_nodes)])
 
 key_events = set(['PullRequestEvent', 'PushEvent', 'IssueCommentEvent', 'IssuesEvent'])
 
 for person in data:
-    collaborators = set([event['repo']['name'].split('/')[0]
+    #
+    count = collections.Counter([event['repo']['name'].split('/')[0]
                          for event in person['events']
                          if event['type'] in key_events])
+    collaborators = set([k for k,v in count.items() if v > 1]) 
     collaborators.difference_update([person['login']])
     collaborators.intersection_update(people_set)
     for c in collaborators:
@@ -88,6 +92,8 @@ for person in data:
                     'y1': people[person['login']]['y'],
                     'x2': people[c]['x'],
                     'y2': people[c]['y'],
+                    'source': people_numbers[person['login']],
+                    'target': people_numbers[c],
                    }
             data_all['links'].append(link)
         except:
