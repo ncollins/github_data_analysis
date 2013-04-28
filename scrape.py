@@ -45,16 +45,21 @@ if __name__ == '__main__':
         d = {}
         d['login'] = person
         d['url'] = user_page['html_url']
+        d['avatar_url'] = user_page.get('avatar_url', '')
 
         # followers
-        followers_url = user_page['followers_url'] + '?page={}'
-        followers_json, _ = get_pages(followers_url)
-        followers = []
-        for follower in followers_json:
-            if follower['login'] in hacker_school.people:
-                followers.append(follower['login'])
-        d['followers'] = followers
-        d['hs_followers_count'] = len(followers)
+        if user_page['followers'] > 0:
+            followers_url = user_page['followers_url'] + '?page={}'
+            followers_json, _ = get_pages(followers_url)
+            followers = []
+            for follower in followers_json:
+                if follower['login'] in hacker_school.people:
+                    followers.append(follower['login'])
+            d['followers'] = followers
+            d['hs_followers_count'] = len(followers)
+        else:
+            d['followers'] = []
+            d['hs_followers_count'] = 0
 
         # repos
         repos_url = user_page['repos_url'] + '?page={}'
