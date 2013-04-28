@@ -82,4 +82,4 @@ if __name__ == '__main__':
         data.append(d)
 
     with open('data/hackers.json', 'w') as f:
-        f.write(json.dumps(data))
+        f.write(json.dumps(data, indent=1))

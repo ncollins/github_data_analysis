@@ -101,7 +101,7 @@ for person in data:
             pass
 
 
-json_data = json.dumps(data_all)
+json_data = json.dumps(data_all, indent=1)
 
 with open('data/hackers_pca.json', 'w') as f:
     f.write(json_data)
