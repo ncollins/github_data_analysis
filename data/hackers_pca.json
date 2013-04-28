@@ -1,0 +1,876 @@
+{
+ "nodes": [
+  {
+   "y": -0.43211858133086689, 
+   "x": -3.3390965167613422, 
+   "login": "wija", 
+   "avatar_url": "https://secure.gravatar.com/avatar/fc1c8b863c9d4e6a95649f76823b6f5a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/wija"
+  }, 
+  {
+   "y": 15.661646601599175, 
+   "x": 2.040952825622385, 
+   "login": "davidbalbert", 
+   "avatar_url": "https://secure.gravatar.com/avatar/378ba200016630f4a3335c8c1707502a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/davidbalbert"
+  }, 
+  {
+   "y": -2.1437797906050142, 
+   "x": -1.0731936102343496, 
+   "login": "santialbo", 
+   "avatar_url": "https://secure.gravatar.com/avatar/ce28a2877e6e4ff4eb519d5df78fe8b0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/santialbo"
+  }, 
+  {
+   "y": -2.348706616555301, 
+   "x": -3.0898488504683037, 
+   "login": "zachallaun", 
+   "avatar_url": "https://secure.gravatar.com/avatar/06625cbad0c69f5c2e673a4312e9fd7e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/zachallaun"
+  }, 
+  {
+   "y": -1.0432323010032474, 
+   "x": -2.3051218100262161, 
+   "login": "greggreggreg7", 
+   "avatar_url": "https://secure.gravatar.com/avatar/ab5c2ba36f555f6dce422a528a6da8bc?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/greggreggreg7"
+  }, 
+  {
+   "y": -7.3512771960261203, 
+   "x": 10.24174648002321, 
+   "login": "thomasballinger", 
+   "avatar_url": "https://secure.gravatar.com/avatar/34bd52c407eae8e6dcdc0f2d46693236?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/thomasballinger"
+  }, 
+  {
+   "y": -2.6864500827501754, 
+   "x": 1.5418423581869876, 
+   "login": "nehalita", 
+   "avatar_url": "https://secure.gravatar.com/avatar/09f2ca686b8694d23ff27d70f519a209?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/nehalita"
+  }, 
+  {
+   "y": -1.1274958868826979, 
+   "x": -2.1601983219060381, 
+   "login": "AlexandreBeaulne", 
+   "avatar_url": "https://secure.gravatar.com/avatar/5a3c59e495a0eb0592c95059e5debbc5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/AlexandreBeaulne"
+  }, 
+  {
+   "y": 2.8261341910571605, 
+   "x": -1.7760286441863748, 
+   "login": "nicholasbs", 
+   "avatar_url": "https://secure.gravatar.com/avatar/2eeaf81e31179b7bbc13c026664fee95?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/nicholasbs"
+  }, 
+  {
+   "y": 5.1257011659469613, 
+   "x": -0.40048200990413069, 
+   "login": "bebebebebe", 
+   "avatar_url": "https://secure.gravatar.com/avatar/b0fd59cd3f3d6610d9c902b415f808cc?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/bebebebebe"
+  }, 
+  {
+   "y": 0.79271029237815016, 
+   "x": -3.2536477710917775, 
+   "login": "thomasboyt", 
+   "avatar_url": "https://secure.gravatar.com/avatar/84ef853d16e9ed49e6808d7b024c064c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/thomasboyt"
+  }, 
+  {
+   "y": -3.2017282344669487, 
+   "x": 1.6379400459562492, 
+   "login": "brannerchinese", 
+   "avatar_url": "https://secure.gravatar.com/avatar/542b74d6483bf1d4569abdfde1390d2e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/brannerchinese"
+  }, 
+  {
+   "y": -2.6856953753192956, 
+   "x": 0.10304649533616007, 
+   "login": "nathanwbrei", 
+   "avatar_url": "https://secure.gravatar.com/avatar/66d0e9690082b558a3544e96dffe43d6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/nathanwbrei"
+  }, 
+  {
+   "y": 0.50653208664425997, 
+   "x": -2.7838392266303944, 
+   "login": "richardburton", 
+   "avatar_url": "https://secure.gravatar.com/avatar/80b006d40de5e39fe50bd6868dd53969?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/richardburton"
+  }, 
+  {
+   "y": -0.84397953238514001, 
+   "x": -1.9290010473863908, 
+   "login": "jinchung", 
+   "avatar_url": "https://secure.gravatar.com/avatar/b542b3a37377f22f8377a926b4bb88f6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/jinchung"
+  }, 
+  {
+   "y": -1.8315087440962405, 
+   "x": -1.9007960809887381, 
+   "login": "jac300", 
+   "avatar_url": "https://secure.gravatar.com/avatar/0d254f18d0c8c88170666c8abdb16b93?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/jac300"
+  }, 
+  {
+   "y": -2.5506641301437885, 
+   "x": 0.78958802270116057, 
+   "login": "ncollins", 
+   "avatar_url": "https://secure.gravatar.com/avatar/72ee26065724239b61be271722b682dd?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/ncollins"
+  }, 
+  {
+   "y": 22.016715266909806, 
+   "x": 0.7830278756492246, 
+   "login": "maryrosecook", 
+   "avatar_url": "https://secure.gravatar.com/avatar/1740897fb90e8f6d3fa0617a61987b37?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/maryrosecook"
+  }, 
+  {
+   "y": -6.5120439664028478, 
+   "x": 9.2935056249555448, 
+   "login": "chirs", 
+   "avatar_url": "https://secure.gravatar.com/avatar/144877ed988449d7b6d0ff344f31279f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/chirs"
+  }, 
+  {
+   "y": 0.296426911808434, 
+   "x": -4.2760612182141511, 
+   "login": "danielmendel", 
+   "avatar_url": "https://secure.gravatar.com/avatar/757c233176d3ad14136df4a547ac4234?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/danielmendel"
+  }, 
+  {
+   "y": 0.52779676668812781, 
+   "x": -3.4476147720065473, 
+   "login": "patrickmestabrook", 
+   "avatar_url": "https://secure.gravatar.com/avatar/983075816b17ef9320ef9d2c48156b33?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/patrickmestabrook"
+  }, 
+  {
+   "y": 2.5031133558201746, 
+   "x": -2.7990202575520136, 
+   "login": "graue", 
+   "avatar_url": "https://secure.gravatar.com/avatar/6a762b6817e4cafdfdf4de534ecb6308?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/graue"
+  }, 
+  {
+   "y": 1.6186518890578032, 
+   "x": -2.2181696835641618, 
+   "login": "codepost", 
+   "avatar_url": "https://secure.gravatar.com/avatar/cb6a0e9ca5475a5d15b76ddef63e1625?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/codepost"
+  }, 
+  {
+   "y": -6.947154441063879, 
+   "x": 7.470762951915134, 
+   "login": "ChuckHa", 
+   "avatar_url": "https://secure.gravatar.com/avatar/2aff223681817a0fadddb6a94a4860b8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/ChuckHa"
+  }, 
+  {
+   "y": -2.3674752341793126, 
+   "x": 2.8346455013057037, 
+   "login": "einashaddad", 
+   "avatar_url": "https://secure.gravatar.com/avatar/65f50bb3369ced8eb5f52906dd88537d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/einashaddad"
+  }, 
+  {
+   "y": -1.0871185337969602, 
+   "x": -2.1950495042689764, 
+   "login": "astrieanna", 
+   "avatar_url": "https://secure.gravatar.com/avatar/54cc6bf56d6223bdb99e5d6cfbd11056?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/astrieanna"
+  }, 
+  {
+   "y": 6.3072897324055761, 
+   "x": -0.4539970598935385, 
+   "login": "syntacticsugar", 
+   "avatar_url": "https://secure.gravatar.com/avatar/3694e93912aeb2f142a20c64234ed50d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/syntacticsugar"
+  }, 
+  {
+   "y": 6.3061313098227467, 
+   "x": -1.0233611512877947, 
+   "login": "rcjara", 
+   "avatar_url": "https://secure.gravatar.com/avatar/91119856d240a863c3db28edfc8341e1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/rcjara"
+  }, 
+  {
+   "y": 2.7813634169424275, 
+   "x": -1.3118148645183796, 
+   "login": "walpurgisriot", 
+   "avatar_url": "https://secure.gravatar.com/avatar/68a9cf78057829610cd8d03190532197?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/walpurgisriot"
+  }, 
+  {
+   "y": 1.3997971986752256, 
+   "x": -3.2333728051598105, 
+   "login": "alliejones", 
+   "avatar_url": "https://secure.gravatar.com/avatar/6f8ddedf593eefcabbc13434b183e7d7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/alliejones"
+  }, 
+  {
+   "y": -15.307135852103389, 
+   "x": 28.198430214306835, 
+   "login": "jacobian", 
+   "avatar_url": "https://secure.gravatar.com/avatar/2f5463832ccb768ccb4a1ca3607c27ef?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/jacobian"
+  }, 
+  {
+   "y": -4.361095326036561, 
+   "x": 6.6656971150195767, 
+   "login": "akaptur", 
+   "avatar_url": "https://secure.gravatar.com/avatar/1cb366b0fb685ba2003085e766225817?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/akaptur"
+  }, 
+  {
+   "y": 1.246811574344181, 
+   "x": -4.6921683335514626, 
+   "login": "StefanKarpinski", 
+   "avatar_url": "https://secure.gravatar.com/avatar/21aeae1f260365557523718bc19640f7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/StefanKarpinski"
+  }, 
+  {
+   "y": -3.2282136064309821, 
+   "x": 2.6145669226163326, 
+   "login": "margo-K", 
+   "avatar_url": "https://secure.gravatar.com/avatar/f471bad0452584456f81e34af9f23b32?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/margo-K"
+  }, 
+  {
+   "y": -0.57099445977017604, 
+   "x": -0.17640720671159063, 
+   "login": "sursh", 
+   "avatar_url": "https://secure.gravatar.com/avatar/7b202f821f765c631a1e6c253318e63b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/sursh"
+  }, 
+  {
+   "y": -0.91944529890797377, 
+   "x": -2.0439487488233818, 
+   "login": "glyph", 
+   "avatar_url": "https://secure.gravatar.com/avatar/e1554622707bedd9202884900430b838?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/glyph"
+  }, 
+  {
+   "y": 5.9021759523191797, 
+   "x": -0.035479943094581523, 
+   "login": "lushi", 
+   "avatar_url": "https://secure.gravatar.com/avatar/c6515e88927b8ba524d0a98ae83db141?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/lushi"
+  }, 
+  {
+   "y": -4.2636590763172491, 
+   "x": 4.8182761990631233, 
+   "login": "becdot", 
+   "avatar_url": "https://secure.gravatar.com/avatar/58118fc62f85ecb2065177ed9317ab65?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/becdot"
+  }, 
+  {
+   "y": -0.86295784441553391, 
+   "x": -1.0898183822959386, 
+   "login": "maxlikely", 
+   "avatar_url": "https://secure.gravatar.com/avatar/2bf4378d854e6f9e8cdba9505b90520e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/maxlikely"
+  }, 
+  {
+   "y": -1.8198733666167004, 
+   "x": -3.0947839528058227, 
+   "login": "danluu", 
+   "avatar_url": "https://secure.gravatar.com/avatar/f6bd929465d6d225def8062d5a9d3f3f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/danluu"
+  }, 
+  {
+   "y": 0.028719640463018337, 
+   "x": 8.280072845669272, 
+   "login": "majek", 
+   "avatar_url": "https://secure.gravatar.com/avatar/d4e1d473a995ef37b3e03e9e6006c3e3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/majek"
+  }, 
+  {
+   "y": -2.1085045506652653, 
+   "x": 0.26593415804936626, 
+   "login": "stmcgovern", 
+   "avatar_url": "https://secure.gravatar.com/avatar/4ba3a10f63751eabd47140d48efd88a6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/stmcgovern"
+  }, 
+  {
+   "y": -3.2358456959793274, 
+   "x": 3.1774461408344665, 
+   "login": "jesstess", 
+   "avatar_url": "https://secure.gravatar.com/avatar/c89814a8ed5814421b617cf2242ff01a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/jesstess"
+  }, 
+  {
+   "y": 2.7267819125371768, 
+   "x": -3.7455357450681199, 
+   "login": "newsomc", 
+   "avatar_url": "https://secure.gravatar.com/avatar/f56280133e3160fcce01a5db33924c63?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/newsomc"
+  }, 
+  {
+   "y": -0.55856569127768552, 
+   "x": -5.1355833862676601, 
+   "login": "swannodette", 
+   "avatar_url": "https://secure.gravatar.com/avatar/eac0aafb77a926e0ef53779ce873a472?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/swannodette"
+  }, 
+  {
+   "y": 6.5096233009263846, 
+   "x": 1.682736476724418, 
+   "login": "happy4crazy", 
+   "avatar_url": "https://secure.gravatar.com/avatar/282da691709f4715fc3e0ff6bebd278b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/happy4crazy"
+  }, 
+  {
+   "y": -0.39102974181968758, 
+   "x": -3.7122798202327703, 
+   "login": "angiep", 
+   "avatar_url": "https://secure.gravatar.com/avatar/3e23fa6f6dcc85e885cc5302e719541c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/angiep"
+  }, 
+  {
+   "y": 0.31343519884430937, 
+   "x": -1.5595681006494546, 
+   "login": "RedCupCorporation", 
+   "avatar_url": "https://secure.gravatar.com/avatar/a89657ea760223ce39bd2a103b0bd99b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/RedCupCorporation"
+  }, 
+  {
+   "y": -0.3453620878817984, 
+   "x": -4.2312208302475396, 
+   "login": "osnr", 
+   "avatar_url": "https://secure.gravatar.com/avatar/fb01c1e60bb91d2f8b5b0039990fbb82?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/osnr"
+  }, 
+  {
+   "y": -1.4782081193337457, 
+   "x": -1.3889939574023173, 
+   "login": "gelstudios", 
+   "avatar_url": "https://secure.gravatar.com/avatar/ac1dff6e32e40c6f5d2b6050376a3765?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/gelstudios"
+  }, 
+  {
+   "y": -0.83887391004905909, 
+   "x": -1.8560673313529796, 
+   "login": "domroselli", 
+   "avatar_url": "https://secure.gravatar.com/avatar/b1203b3d2ff0d94aabf92bf839fd717a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/domroselli"
+  }, 
+  {
+   "y": 6.5856357484930399, 
+   "x": -1.257393244181862, 
+   "login": "dschobel", 
+   "avatar_url": "https://secure.gravatar.com/avatar/6f583488b0ceaaef4a19844132a81ec9?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/dschobel"
+  }, 
+  {
+   "y": -1.2926816508298791, 
+   "x": -1.261071160634393, 
+   "login": "staceysern", 
+   "avatar_url": "https://secure.gravatar.com/avatar/0d3a1755b1e2bb0552c4fbb42bd02ef0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/staceysern"
+  }, 
+  {
+   "y": -2.2223420420987341, 
+   "x": 1.9348700787005693, 
+   "login": "qqrs", 
+   "avatar_url": "https://secure.gravatar.com/avatar/facdd7addfdb8cbc41e9a94fac6a54b7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/qqrs"
+  }, 
+  {
+   "y": 0.56096495427559789, 
+   "x": -3.2056812786040521, 
+   "login": "jollysonali", 
+   "avatar_url": "https://secure.gravatar.com/avatar/cc9f1b1f2ea952ca92d2e7744a3f4cb1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/jollysonali"
+  }, 
+  {
+   "y": -1.7059793714794973, 
+   "x": -4.1477807031767684, 
+   "login": "leocadiotine", 
+   "avatar_url": "https://secure.gravatar.com/avatar/91d42c7399adad02655a69fc8fc4a514?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/leocadiotine"
+  }, 
+  {
+   "y": -1.0737850982990573, 
+   "x": -4.5250418177179146, 
+   "login": "jayschwa", 
+   "avatar_url": "https://secure.gravatar.com/avatar/805857de807ffc1b543e807f727d05c6?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png", 
+   "url": "https://github.com/jayschwa"
+  }, 
+  {
+   "y": -0.79917703063878365, 
+   "x": -2.2465491837676357, 
+   "login": "hackerschool", 
+   "avatar_url": "https://secure.gravatar.com/avatar/588308d511de92d8e642da998cdc5d06?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-420.png", 
+   "url": "https://github.com/hackerschool"
+  }
+ ], 
+ "links": [
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 1, 
+   "x2": -2.2465491837676357, 
+   "y1": 15.661646601599175, 
+   "x1": 2.040952825622385
+  }, 
+  {
+   "y2": -2.348706616555301, 
+   "target": 3, 
+   "source": 1, 
+   "x2": -3.0898488504683037, 
+   "y1": 15.661646601599175, 
+   "x1": 2.040952825622385
+  }, 
+  {
+   "y2": 0.79271029237815016, 
+   "target": 10, 
+   "source": 2, 
+   "x2": -3.2536477710917775, 
+   "y1": -2.1437797906050142, 
+   "x1": -1.0731936102343496
+  }, 
+  {
+   "y2": -0.57099445977017604, 
+   "target": 34, 
+   "source": 2, 
+   "x2": -0.17640720671159063, 
+   "y1": -2.1437797906050142, 
+   "x1": -1.0731936102343496
+  }, 
+  {
+   "y2": -7.3512771960261203, 
+   "target": 5, 
+   "source": 3, 
+   "x2": 10.24174648002321, 
+   "y1": -2.348706616555301, 
+   "x1": -3.0898488504683037
+  }, 
+  {
+   "y2": -6.5120439664028478, 
+   "target": 18, 
+   "source": 3, 
+   "x2": 9.2935056249555448, 
+   "y1": -2.348706616555301, 
+   "x1": -3.0898488504683037
+  }, 
+  {
+   "y2": -3.2017282344669487, 
+   "target": 11, 
+   "source": 3, 
+   "x2": 1.6379400459562492, 
+   "y1": -2.348706616555301, 
+   "x1": -3.0898488504683037
+  }, 
+  {
+   "y2": -1.2926816508298791, 
+   "target": 52, 
+   "source": 3, 
+   "x2": -1.261071160634393, 
+   "y1": -2.348706616555301, 
+   "x1": -3.0898488504683037
+  }, 
+  {
+   "y2": 2.5031133558201746, 
+   "target": 21, 
+   "source": 3, 
+   "x2": -2.7990202575520136, 
+   "y1": -2.348706616555301, 
+   "x1": -3.0898488504683037
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 3, 
+   "x2": -2.2465491837676357, 
+   "y1": -2.348706616555301, 
+   "x1": -3.0898488504683037
+  }, 
+  {
+   "y2": 6.5096233009263846, 
+   "target": 45, 
+   "source": 5, 
+   "x2": 1.682736476724418, 
+   "y1": -7.3512771960261203, 
+   "x1": 10.24174648002321
+  }, 
+  {
+   "y2": -6.5120439664028478, 
+   "target": 18, 
+   "source": 5, 
+   "x2": 9.2935056249555448, 
+   "y1": -7.3512771960261203, 
+   "x1": 10.24174648002321
+  }, 
+  {
+   "y2": -1.8315087440962405, 
+   "target": 15, 
+   "source": 5, 
+   "x2": -1.9007960809887381, 
+   "y1": -7.3512771960261203, 
+   "x1": 10.24174648002321
+  }, 
+  {
+   "y2": -4.361095326036561, 
+   "target": 31, 
+   "source": 5, 
+   "x2": 6.6656971150195767, 
+   "y1": -7.3512771960261203, 
+   "x1": 10.24174648002321
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 5, 
+   "x2": -2.2465491837676357, 
+   "y1": -7.3512771960261203, 
+   "x1": 10.24174648002321
+  }, 
+  {
+   "y2": -2.348706616555301, 
+   "target": 3, 
+   "source": 5, 
+   "x2": -3.0898488504683037, 
+   "y1": -7.3512771960261203, 
+   "x1": 10.24174648002321
+  }, 
+  {
+   "y2": -6.5120439664028478, 
+   "target": 18, 
+   "source": 7, 
+   "x2": 9.2935056249555448, 
+   "y1": -1.1274958868826979, 
+   "x1": -2.1601983219060381
+  }, 
+  {
+   "y2": 1.6186518890578032, 
+   "target": 22, 
+   "source": 7, 
+   "x2": -2.2181696835641618, 
+   "y1": -1.1274958868826979, 
+   "x1": -2.1601983219060381
+  }, 
+  {
+   "y2": -0.84397953238514001, 
+   "target": 14, 
+   "source": 7, 
+   "x2": -1.9290010473863908, 
+   "y1": -1.1274958868826979, 
+   "x1": -2.1601983219060381
+  }, 
+  {
+   "y2": 6.3061313098227467, 
+   "target": 27, 
+   "source": 7, 
+   "x2": -1.0233611512877947, 
+   "y1": -1.1274958868826979, 
+   "x1": -2.1601983219060381
+  }, 
+  {
+   "y2": 22.016715266909806, 
+   "target": 17, 
+   "source": 8, 
+   "x2": 0.7830278756492246, 
+   "y1": 2.8261341910571605, 
+   "x1": -1.7760286441863748
+  }, 
+  {
+   "y2": 15.661646601599175, 
+   "target": 1, 
+   "source": 8, 
+   "x2": 2.040952825622385, 
+   "y1": 2.8261341910571605, 
+   "x1": -1.7760286441863748
+  }, 
+  {
+   "y2": -2.3674752341793126, 
+   "target": 24, 
+   "source": 12, 
+   "x2": 2.8346455013057037, 
+   "y1": -2.6856953753192956, 
+   "x1": 0.10304649533616007
+  }, 
+  {
+   "y2": 0.31343519884430937, 
+   "target": 47, 
+   "source": 13, 
+   "x2": -1.5595681006494546, 
+   "y1": 0.50653208664425997, 
+   "x1": -2.7838392266303944
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 16, 
+   "x2": -2.2465491837676357, 
+   "y1": -2.5506641301437885, 
+   "x1": 0.78958802270116057
+  }, 
+  {
+   "y2": -2.348706616555301, 
+   "target": 3, 
+   "source": 16, 
+   "x2": -3.0898488504683037, 
+   "y1": -2.5506641301437885, 
+   "x1": 0.78958802270116057
+  }, 
+  {
+   "y2": 5.1257011659469613, 
+   "target": 9, 
+   "source": 17, 
+   "x2": -0.40048200990413069, 
+   "y1": 22.016715266909806, 
+   "x1": 0.7830278756492246
+  }, 
+  {
+   "y2": 2.7267819125371768, 
+   "target": 43, 
+   "source": 18, 
+   "x2": -3.7455357450681199, 
+   "y1": -6.5120439664028478, 
+   "x1": 9.2935056249555448
+  }, 
+  {
+   "y2": -0.84397953238514001, 
+   "target": 14, 
+   "source": 19, 
+   "x2": -1.9290010473863908, 
+   "y1": 0.296426911808434, 
+   "x1": -4.2760612182141511
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 19, 
+   "x2": -2.2465491837676357, 
+   "y1": 0.296426911808434, 
+   "x1": -4.2760612182141511
+  }, 
+  {
+   "y2": -2.348706616555301, 
+   "target": 3, 
+   "source": 19, 
+   "x2": -3.0898488504683037, 
+   "y1": 0.296426911808434, 
+   "x1": -4.2760612182141511
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 23, 
+   "x2": -2.2465491837676357, 
+   "y1": -6.947154441063879, 
+   "x1": 7.470762951915134
+  }, 
+  {
+   "y2": -0.57099445977017604, 
+   "target": 34, 
+   "source": 24, 
+   "x2": -0.17640720671159063, 
+   "y1": -2.3674752341793126, 
+   "x1": 2.8346455013057037
+  }, 
+  {
+   "y2": -1.8198733666167004, 
+   "target": 39, 
+   "source": 25, 
+   "x2": -3.0947839528058227, 
+   "y1": -1.0871185337969602, 
+   "x1": -2.1950495042689764
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 25, 
+   "x2": -2.2465491837676357, 
+   "y1": -1.0871185337969602, 
+   "x1": -2.1950495042689764
+  }, 
+  {
+   "y2": -2.5506641301437885, 
+   "target": 16, 
+   "source": 27, 
+   "x2": 0.78958802270116057, 
+   "y1": 6.3061313098227467, 
+   "x1": -1.0233611512877947
+  }, 
+  {
+   "y2": -2.5506641301437885, 
+   "target": 16, 
+   "source": 28, 
+   "x2": 0.78958802270116057, 
+   "y1": 2.7813634169424275, 
+   "x1": -1.3118148645183796
+  }, 
+  {
+   "y2": 5.1257011659469613, 
+   "target": 9, 
+   "source": 28, 
+   "x2": -0.40048200990413069, 
+   "y1": 2.7813634169424275, 
+   "x1": -1.3118148645183796
+  }, 
+  {
+   "y2": 6.3061313098227467, 
+   "target": 27, 
+   "source": 28, 
+   "x2": -1.0233611512877947, 
+   "y1": 2.7813634169424275, 
+   "x1": -1.3118148645183796
+  }, 
+  {
+   "y2": -2.5506641301437885, 
+   "target": 16, 
+   "source": 31, 
+   "x2": 0.78958802270116057, 
+   "y1": -4.361095326036561, 
+   "x1": 6.6656971150195767
+  }, 
+  {
+   "y2": -2.6864500827501754, 
+   "target": 6, 
+   "source": 31, 
+   "x2": 1.5418423581869876, 
+   "y1": -4.361095326036561, 
+   "x1": 6.6656971150195767
+  }, 
+  {
+   "y2": -2.348706616555301, 
+   "target": 3, 
+   "source": 31, 
+   "x2": -3.0898488504683037, 
+   "y1": -4.361095326036561, 
+   "x1": 6.6656971150195767
+  }, 
+  {
+   "y2": -1.0871185337969602, 
+   "target": 25, 
+   "source": 32, 
+   "x2": -2.1950495042689764, 
+   "y1": 1.246811574344181, 
+   "x1": -4.6921683335514626
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 32, 
+   "x2": -2.2465491837676357, 
+   "y1": 1.246811574344181, 
+   "x1": -4.6921683335514626
+  }, 
+  {
+   "y2": -0.79917703063878365, 
+   "target": 57, 
+   "source": 38, 
+   "x2": -2.2465491837676357, 
+   "y1": -0.86295784441553391, 
+   "x1": -1.0898183822959386
+  }, 
+  {
+   "y2": 0.028719640463018337, 
+   "target": 40, 
+   "source": 39, 
+   "x2": 8.280072845669272, 
+   "y1": -1.8198733666167004, 
+   "x1": -3.0947839528058227
+  }, 
+  {
+   "y2": -1.0871185337969602, 
+   "target": 25, 
+   "source": 39, 
+   "x2": -2.1950495042689764, 
+   "y1": -1.8198733666167004, 
+   "x1": -3.0947839528058227
+  }, 
+  {
+   "y2": 6.3061313098227467, 
+   "target": 27, 
+   "source": 39, 
+   "x2": -1.0233611512877947, 
+   "y1": -1.8198733666167004, 
+   "x1": -3.0947839528058227
+  }, 
+  {
+   "y2": -6.5120439664028478, 
+   "target": 18, 
+   "source": 41, 
+   "x2": 9.2935056249555448, 
+   "y1": -2.1085045506652653, 
+   "x1": 0.26593415804936626
+  }, 
+  {
+   "y2": -2.348706616555301, 
+   "target": 3, 
+   "source": 43, 
+   "x2": -3.0898488504683037, 
+   "y1": 2.7267819125371768, 
+   "x1": -3.7455357450681199
+  }, 
+  {
+   "y2": 6.3061313098227467, 
+   "target": 27, 
+   "source": 43, 
+   "x2": -1.0233611512877947, 
+   "y1": 2.7267819125371768, 
+   "x1": -3.7455357450681199
+  }, 
+  {
+   "y2": -1.7059793714794973, 
+   "target": 55, 
+   "source": 44, 
+   "x2": -4.1477807031767684, 
+   "y1": -0.55856569127768552, 
+   "x1": -5.1355833862676601
+  }, 
+  {
+   "y2": -2.3674752341793126, 
+   "target": 24, 
+   "source": 45, 
+   "x2": 2.8346455013057037, 
+   "y1": 6.5096233009263846, 
+   "x1": 1.682736476724418
+  }, 
+  {
+   "y2": -2.6864500827501754, 
+   "target": 6, 
+   "source": 45, 
+   "x2": 1.5418423581869876, 
+   "y1": 6.5096233009263846, 
+   "x1": 1.682736476724418
+  }, 
+  {
+   "y2": 0.31343519884430937, 
+   "target": 47, 
+   "source": 46, 
+   "x2": -1.5595681006494546, 
+   "y1": -0.39102974181968758, 
+   "x1": -3.7122798202327703
+  }, 
+  {
+   "y2": -2.2223420420987341, 
+   "target": 53, 
+   "source": 49, 
+   "x2": 1.9348700787005693, 
+   "y1": -1.4782081193337457, 
+   "x1": -1.3889939574023173
+  }, 
+  {
+   "y2": 15.661646601599175, 
+   "target": 1, 
+   "source": 54, 
+   "x2": 2.040952825622385, 
+   "y1": 0.56096495427559789, 
+   "x1": -3.2056812786040521
+  }, 
+  {
+   "y2": -1.1274958868826979, 
+   "target": 7, 
+   "source": 55, 
+   "x2": -2.1601983219060381, 
+   "y1": -1.7059793714794973, 
+   "x1": -4.1477807031767684
+  }
+ ]
+}
