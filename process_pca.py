@@ -18,7 +18,7 @@ with open('data/hackers.json', 'r') as f:
 features = set()
 for person in data:
     features.update(person.keys())
-features.difference_update(['events', 'followers', 'login', 'url', 'repos'])
+features.difference_update(['events', 'followers', 'login', 'url', 'repos', 'avatar_url'])
 orderedfeatures = list(features)
 
 full_array = np.ndarray((len(data), len(features)))
@@ -62,7 +62,8 @@ for i, p in enumerate(data):
     y = sum(v1 * reduced_array[i])
     login = p['login']
     url = p['url']
-    data_nodes.append({'x': x, 'y': y, 'login': login, 'url': url})
+    avatar_url = p.get('avatar_url', '')
+    data_nodes.append({'x': x, 'y': y, 'login': login, 'url': url, 'avatar_url': avatar_url})
 
 data_all = {'nodes': data_nodes, 'links': []}
 
