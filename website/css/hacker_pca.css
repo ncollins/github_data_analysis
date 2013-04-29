@@ -1,12 +1,19 @@
+body {
+    /*background-color:#f3f8e6;*/
+    background-color: #f0ffc7;
+}
+
 .axis {
     font-family: arial;
     font-size:0.6em;
 }
+
 path {
     fill:none;
     stroke:black;
     stroke-width:2px;
 }
+
 .tick {
     /*fill:none;
     stroke:black;*/
@@ -14,10 +21,32 @@ path {
 circle {
     stroke:black;
     stroke-width:0.5px;
-    fill:MediumSeaGreen;
+    fill:#cc0092;
 }
 
+/*
 path.line{
-    stroke:MediumSeaGreen;
+    stroke:navy;
+    fill:navy;
+}
+*/
+
+#wrapper {
+    width:1000px;
 }
 
+#hackers {
+    width:200px;
+    float:left;
+}
+
+#graph {
+    width:600px;
+    height:600px;
+    float:left;
+}
+
+#collaborators {
+    width:50px;
+    float:left;
+}

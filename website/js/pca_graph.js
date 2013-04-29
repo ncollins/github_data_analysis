@@ -20,8 +20,9 @@ function draw(data) {
             .attr('y1', function(d) {return y_scale(d.y1)})
             .attr('x2', function(d) {return x_scale(d.x2)})
             .attr('y2', function(d) {return y_scale(d.y2)})
-            .style('stroke', 'rgb(6, 120, 155)')
-            .style('stroke-width', 3);
+            .style('stroke', 'rgb(0, 52, 72)')
+            .style('alpha', 1)
+            .style('stroke-width', 1);
     } 
    
     function drawHackerLinks(hacker) {
@@ -63,7 +64,7 @@ function draw(data) {
 
     var margin = 50,
         height = 500,
-        width = 800,
+        width = 600,
         x_extent = d3.extent(data.nodes, function(d) {return d.x}),
         y_extent = d3.extent(data.nodes, function(d) {return d.y});
 
@@ -76,9 +77,9 @@ function draw(data) {
         .domain(y_extent);
 
     d3.select('#graph')
-        .append('svg')
-        .attr('width', width)
-        .attr('height', height);
+    .append('svg')
+    .attr('width', width)
+    .attr('height', height);
 
     var x_axis = d3.svg.axis().scale(x_scale);
     var y_axis = d3.svg.axis().scale(y_scale).orient('left');
