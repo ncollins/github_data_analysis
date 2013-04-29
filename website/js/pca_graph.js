@@ -41,13 +41,13 @@ function draw(data) {
                 hackerIDs,
                 function(n) {return data.nodes[n]});
 
-        d3.select('.selectedHackers')
+        d3.select('#collaborators')
         .selectAll('img')
         .data([])
         .exit()
         .remove();
 
-        d3.select('.selectedHackers')
+        d3.select('#collaborators')
         .selectAll('img')
         .data(hackers)
         .enter()
@@ -75,7 +75,7 @@ function draw(data) {
         .range([height-margin, margin]) // margin-height to reverse direction
         .domain(y_extent);
 
-    d3.select('body')
+    d3.select('#graph')
         .append('svg')
         .attr('width', width)
         .attr('height', height);
@@ -114,20 +114,16 @@ function draw(data) {
 
     // pictures
 
-    d3.select('body')
-        .append('div')
-        .selectAll('img')
-        .data(data.nodes)
-        .enter()
-        .append('img')
-        .attr('height', '40px')
-        .attr('width', '40px')
-        .attr('src', function(d) {return d.avatar_url})
-        .attr('title', function(d) {return d.login})
-        .on('click', drawHackerLinks);
+    d3.select('#hackers')
+    .selectAll('img')
+    .data(data.nodes)
+    .enter()
+    .append('img')
+    .attr('height', '40px')
+    .attr('width', '40px')
+    .attr('src', function(d) {return d.avatar_url})
+    .attr('title', function(d) {return d.login})
+    .on('click', drawHackerLinks);
 
-    d3.select('body')
-        .append('div')
-        .attr('class', 'selectedHackers')
 }
 

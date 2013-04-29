@@ -3,7 +3,7 @@
   <head>
     <title>Hacker School Github Data</title>
     <meta charset="utf-8">
-    
+
     <link type="text/css" href="css/hacker_pca.css" rel="stylesheet" />
 
     <script type="text/javascript" src="jslib/d3.js"></script>
@@ -13,6 +13,11 @@
 
   </head>
   <body>
+    <div id="wrapper">
+      <div id="graph"></div>
+      <div id="hackers"></div>
+      <div id="collaborators"></div>
+    </div>
     <script>
       d3.json("data/hackers_pca.json", draw);
     </script>
