@@ -1,6 +1,7 @@
 body {
     /*background-color:#f3f8e6;*/
     background-color: #f0ffc7;
+    font-family:Verdana, Geneva, sans-serif;
 }
 
 .axis {
@@ -36,7 +37,8 @@ path.line{
 }
 
 #hackers {
-    width:200px;
+    width:150px;
+    height:600px;
     float:left;
 }
 
@@ -47,6 +49,23 @@ path.line{
 }
 
 #collaborators {
-    width:50px;
+    width:200px;
+    height:600px;
+    float:left;
+}
+
+.collaborator {
+    width:200px;
+    height:40px;
+    float:none;
+}
+
+.collaborator-image {
+    float:left;
+}
+
+.collaborator-name {
+    width:160px;
+    height:40px;
     float:left;
 }

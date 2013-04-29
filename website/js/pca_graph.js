@@ -25,7 +25,7 @@ function draw(data) {
             .style('stroke-width', 1);
     } 
    
-    function drawHackerLinks(hacker) {
+    function selectHacker(hacker) {
         var id = hacker.id;
         var filteredlinks = _.filter(data.links,
                 function(l) {
@@ -43,20 +43,33 @@ function draw(data) {
                 function(n) {return data.nodes[n]});
 
         d3.select('#collaborators')
-        .selectAll('img')
+        .selectAll('div')
         .data([])
         .exit()
         .remove();
 
-        d3.select('#collaborators')
-        .selectAll('img')
+        var divs = d3.select('#collaborators')
+        .selectAll('div')
         .data(hackers)
         .enter()
-        .append('img')
+        .append('div')
+        .attr('class', 'collaborator')
+        .attr('height', '40px')
+        .attr('width', '200px')
+
+        divs.append('img')
+        .attr('class', 'collaborator-image')
         .attr('height', '40px')
         .attr('width', '40px')
         .attr('src', function(d) {return d.avatar_url})
-        .attr('title', function(d) {return d.login});
+        .attr('title', function(d) {return d.login})
+        
+        divs.append('div')
+        .attr('class', 'collaborator-name')
+        .attr('height', '40px')
+        .attr('width', '160px')
+        .append('p')
+        .text(function(d) {return d.login});
 
     }
 
@@ -120,11 +133,11 @@ function draw(data) {
     .data(data.nodes)
     .enter()
     .append('img')
-    .attr('height', '40px')
-    .attr('width', '40px')
+    .attr('height', '30px')
+    .attr('width', '30px')
     .attr('src', function(d) {return d.avatar_url})
     .attr('title', function(d) {return d.login})
-    .on('click', drawHackerLinks);
+    .on('click', selectHacker);
 
 }
 
