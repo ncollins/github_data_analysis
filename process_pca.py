@@ -82,7 +82,8 @@ for person in data:
     count = collections.Counter([event['repo']['name'].split('/')[0]
                          for event in person['events']
                          if event['type'] in key_events])
-    collaborators = set([k for k,v in count.items() if v > 1]) 
+    #collaborators = set([k for k,v in count.items() if v > 1])
+    collaborators = set([k for k,v in count.items() if v > 0])
     collaborators.difference_update([person['login']])
     collaborators.intersection_update(people_set)
     for c in collaborators:
