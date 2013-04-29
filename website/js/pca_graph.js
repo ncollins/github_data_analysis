@@ -32,6 +32,31 @@ function draw(data) {
                 });
 
         drawLinks(filteredlinks);
+
+        var hackerIDs = _.union(
+                _.map(filteredlinks, function(l) {return l.source}),
+                _.map(filteredlinks, function(l) {return l.target}));
+
+        var hackers = _.map(
+                hackerIDs,
+                function(n) {return data.nodes[n]});
+
+        d3.select('.selectedHackers')
+        .selectAll('img')
+        .data([])
+        .exit()
+        .remove();
+
+        d3.select('.selectedHackers')
+        .selectAll('img')
+        .data(hackers)
+        .enter()
+        .append('img')
+        .attr('height', '40px')
+        .attr('width', '40px')
+        .attr('src', function(d) {return d.avatar_url})
+        .attr('title', function(d) {return d.login});
+
     }
 
     // main body
@@ -70,20 +95,6 @@ function draw(data) {
     .attr('transform', 'translate(' + margin + ',0)')
     .call(y_axis);
 
-    /*
-    d3.select('svg')
-    .selectAll('line')
-    .data(data.links)
-    .enter()
-    .append('svg:line')
-    .attr('x1', function(d) {return x_scale(d.x1)})
-    .attr('y1', function(d) {return y_scale(d.y1)})
-    .attr('x2', function(d) {return x_scale(d.x2)})
-    .attr('y2', function(d) {return y_scale(d.y2)})
-    .style('stroke', 'rgb(6, 120, 155)')
-    .style('stroke-width', 3);
-    */
-
     drawLinks(data.links);
 
     d3.select('svg')
@@ -101,6 +112,7 @@ function draw(data) {
         });
 
 
+    // pictures
 
     d3.select('body')
         .append('div')
@@ -114,5 +126,8 @@ function draw(data) {
         .attr('title', function(d) {return d.login})
         .on('click', drawHackerLinks);
 
+    d3.select('body')
+        .append('div')
+        .attr('class', 'selectedHackers')
 }
 

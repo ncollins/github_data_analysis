@@ -1,0 +1,23 @@
+.axis {
+    font-family: arial;
+    font-size:0.6em;
+}
+path {
+    fill:none;
+    stroke:black;
+    stroke-width:2px;
+}
+.tick {
+    /*fill:none;
+    stroke:black;*/
+}
+circle {
+    stroke:black;
+    stroke-width:0.5px;
+    fill:MediumSeaGreen;
+}
+
+path.line{
+    stroke:MediumSeaGreen;
+}
+
