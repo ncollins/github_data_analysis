@@ -73,9 +73,11 @@ function selectHacker(hacker, links, nodes, xfunc, yfunc) {
             _.map(filteredlinks, function(l) {return l.source}),
             _.map(filteredlinks, function(l) {return l.target}));
 
-    var hackers = _.map(
-            hackerIDs,
-            function(n) {return nodes[n]});
+    hackerIDs = [id].concat(_.without(hackerIDs, id));
+
+    console.log(hackerIDs);
+
+    var hackers = _.map(hackerIDs, function(n) {return nodes[n]});
 
     d3.select('#collaborators')
         .selectAll('div')
@@ -142,11 +144,9 @@ function drawNodes(data, xfunc, yfunc) {
         .attr('cx', function(d) {return xfunc(d)})
         .attr('cy', function(d) {return yfunc(d)})
         .attr('r', function(d) {return 6})
+        .on('click', function(d) {selectHacker(d, data.links, data.nodes, xfunc, yfunc)})
         .append("svg:title")
-        .text(function(d) { return d.login; })
-        .attr("xlink:href", function(d) {
-            return d.url
-        });
+        .text(function(d) { return d.login; });
 
 }
 
