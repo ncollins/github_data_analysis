@@ -59,16 +59,15 @@ function draw(data) {
 
         divs.append('img')
         .attr('class', 'collaborator-image')
-        .attr('height', '40px')
-        .attr('width', '40px')
+        .attr('height', '30px')
+        .attr('width', '30px')
+        .attr('vertical-align', 'center')
         .attr('src', function(d) {return d.avatar_url})
         .attr('title', function(d) {return d.login})
         
         divs.append('div')
         .attr('class', 'collaborator-name')
-        .attr('height', '40px')
-        .attr('width', '160px')
-        .append('p')
+        .append('span')
         .text(function(d) {return d.login});
 
     }
@@ -76,7 +75,7 @@ function draw(data) {
     // main body
 
     var margin = 50,
-        height = 500,
+        height = 400,
         width = 600,
         x_extent = d3.extent(data.nodes, function(d) {return d.x}),
         y_extent = d3.extent(data.nodes, function(d) {return d.y});

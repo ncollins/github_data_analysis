@@ -1,7 +1,12 @@
 body {
     /*background-color:#f3f8e6;*/
     background-color: #f0ffc7;
-    font-family:Verdana, Geneva, sans-serif;
+    /*font-family:Verdana, Geneva, sans-serif;*/
+    font-family:'Ubuntu', sans-serif;*/
+}
+
+img.collaborator-img {
+    display:block;
 }
 
 .axis {
@@ -32,6 +37,10 @@ path.line{
 }
 */
 
+#topimage {
+    width:1000px;
+}
+
 #wrapper {
     width:1000px;
 }
@@ -56,7 +65,7 @@ path.line{
 
 .collaborator {
     width:200px;
-    height:40px;
+    height:30px;
     float:none;
 }
 
@@ -65,7 +74,8 @@ path.line{
 }
 
 .collaborator-name {
-    width:160px;
-    height:40px;
+    width:170px;
+    height:30px;
+    line-height:30px;
     float:left;
 }
