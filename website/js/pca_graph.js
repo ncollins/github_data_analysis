@@ -1,26 +1,35 @@
+function setupButtons() {
+    
+    d3.select('#pcbutton')
+        .on('click', function(d) {
+            d3.json("data/hackers_pca.json",
+                function(d) {
+                    draw(d, 'pc0', 'pc1');
+                })
+            });
 
-function draw(data) {
+    d3.select('#contributionsbutton')
+        .on('click', function(d) {
+            d3.json("data/hackers_pca.json",
+                function(d) {
+                    draw(d, 'pc1', 'hs_collaboration');
+                })
+            });
+
+}
+
+
+function draw(data, xval, yval) {
     "use strict";
-
-    // pictures
-    d3.select('#hackers')
-        .selectAll('img')
-        .data(data.nodes)
-        .enter()
-        .append('img')
-        .attr('height', '30px')
-        .attr('width', '30px')
-        .attr('src', function(d) {return d.avatar_url})
-        .attr('title', function(d) {return d.login})
-        //.on('click', function(x) {x} ); //selectHacker); 
-        .on('click', function(d) {selectHacker(d, data.links, data.nodes, xfunc, yfunc)}); 
 
     // main body
     var margin = 50,
         height = 400,
         width = 600,
-        x_extent = d3.extent(data.nodes, function(d) { return d.pc0 }),
-        y_extent = d3.extent(data.nodes, function(d) { return d.pc1 });
+        x_extent = d3.extent(data.nodes, function(d) { return d[xval] }),
+        y_extent = d3.extent(data.nodes, function(d) { return d[yval] });
+
+    console.log(y_extent)
 
     var x_scale = d3.scale.sqrt()
         .range([margin, width-margin])
@@ -30,11 +39,17 @@ function draw(data) {
         .range([height-margin, margin]) // margin-height to reverse direction
         .domain(y_extent);
 
-    var xfunc = function(d) {return x_scale(d.pc0)};
-    var yfunc = function(d) {return y_scale(d.pc1)};
+    var xfunc = function(d) {return x_scale(d[xval])};
+    var yfunc = function(d) {return y_scale(d[yval])};
+
+    var svg = document.getElementById('mainSVG')
+    while (svg.lastChild) {
+        svg.removeChild(svg.lastChild);
+    }
 
     d3.select('#graph')
         .append('svg')
+        .attr('id', 'mainSVG')
         .attr('width', width)
         .attr('height', height);
 
@@ -53,8 +68,21 @@ function draw(data) {
     .attr('transform', 'translate(' + margin + ',0)')
     .call(y_axis);
 
+    // pictures
+    d3.select('#hackers')
+        .selectAll('img')
+        .data(data.nodes)
+        .enter()
+        .append('img')
+        .attr('height', '30px')
+        .attr('width', '30px')
+        .attr('src', function(d) {return d.avatar_url})
+        .attr('title', function(d) {return d.login})
+        .on('click', function(d) {selectHacker(d, data.links, data.nodes, xfunc, yfunc)}); 
+
     // nodes
     drawNodes(data, xfunc, yfunc);
+    drawLinks([], data.nodes, xfunc, yfunc);
 
 }
 
@@ -74,8 +102,6 @@ function selectHacker(hacker, links, nodes, xfunc, yfunc) {
             _.map(filteredlinks, function(l) {return l.target}));
 
     hackerIDs = [id].concat(_.without(hackerIDs, id));
-
-    console.log(hackerIDs);
 
     var hackers = _.map(hackerIDs, function(n) {return nodes[n]});
 

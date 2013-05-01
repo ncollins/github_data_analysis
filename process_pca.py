@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     links = {}
 
-    for user in scraping_data:
+    for i, user in enumerate(scraping_data):
         # build links
         counts = collections.Counter([event['repo']['name'].split('/')[0]
                                          for event in user['events']
@@ -99,6 +99,9 @@ if __name__ == '__main__':
                 except Exception as e:
                     # TODO: fix this!
                     pass
+        data_all['nodes'][i]['total_collaboration'] = sum(counts.values())
+        data_all['nodes'][i]['hs_collaboration'] = sum([v for k,v in counts.iteritems()
+                                                       if k in user_id])
 
         data_all['links'] = [{'source': user_id[pt0], 'target': user_id[pt1], 'weight': weight}
                               for (pt0, pt1), weight in links.iteritems()]
