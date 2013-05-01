@@ -51,12 +51,7 @@ if __name__ == '__main__':
     with open('website/data/hackers.json', 'r') as f:
         scraping_data = json.loads(f.read())
 
-    features = set()
-    for person in scraping_data:
-        features.update(person.keys())
-    features.difference_update(['events', 'followers', 'login', 'url', 'repos', 'avatar_url'])
-    orderedfeatures = list(features)
-
+    features = set([]).union(*[user.keys() for user in scraping_data])
     languages = [f for f in features if f[:5] == 'lang:' and not f == 'lang:None']
     reduced_array, top10 = top_feature_matrix(scraping_data, languages, 10)
 
@@ -72,44 +67,41 @@ if __name__ == '__main__':
 
     #
 
-    people = dict([(p['login'], p) for p in scraping_data])
-    people_set = set(people.keys())
-    people_numbers = dict([(p['login'], i) for i, p in enumerate(scraping_data)])
+    user_id = dict([(u['login'], i) for i, u in enumerate(scraping_data)])
 
-    data_nodes = []
-    for i, p in enumerate(scraping_data):
-        pc0 = sum(V0 * reduced_array[i])
-        pc1 = sum(V1 * reduced_array[i])
-        login = p['login']
-        url = p['url']
-        avatar_url = p.get('avatar_url', '')
-        data_nodes.append({'pc0': pc0, 'pc1': pc1, 'login': login, 'url': url,
-                           'avatar_url': avatar_url, 'id': people_numbers[login]})
+    data_all = {'nodes': [], 'links': []}
 
-    data_all = {'nodes': data_nodes, 'links': []}
+    for i, user in enumerate(scraping_data):
+        data_all['nodes'].append({'pc0': sum(V0 * reduced_array[i]),
+                              'pc1': sum(V1 * reduced_array[i]),
+                              'login': user['login'],
+                              'url': user['url'],
+                              'avatar_url': user.get('avatar_url', ''),
+                              'id': i})
+
 
     key_events = set(['PullRequestEvent', 'PushEvent', 'IssueCommentEvent', 'IssuesEvent'])
 
-    people = dict([(p['login'], p) for p in data_nodes])
-    people_set = set(people.keys())
+    links = {}
 
-    for person in scraping_data:
-        #
-        count = collections.Counter([event['repo']['name'].split('/')[0]
-                             for event in person['events']
-                             if event['type'] in key_events])
-        #collaborators = set([k for k,v in count.items() if v > 1])
-        collaborators = set([k for k,v in count.items() if v > 0])
-        collaborators.difference_update([person['login']])
-        collaborators.intersection_update(people_set)
-        for c in collaborators:
-            try:
-                link = {'source': people_numbers[person['login']],
-                        'target': people_numbers[c]}
-                data_all['links'].append(link)
-            except Exception as e:
-                # TODO: fix this!
-                pass
+    for user in scraping_data:
+        # build links
+        counts = collections.Counter([event['repo']['name'].split('/')[0]
+                                         for event in user['events']
+                                         if event['type'] in key_events])
+        counts.pop(user['login'], None)
+        for collaborator, count in counts.iteritems():
+            if collaborator in user_id:
+                try:
+                    pt0 = min(user['login'], collaborator)
+                    pt1 = max(user['login'], collaborator)
+                    links[(pt0, pt1)] = links.get((pt0, pt1), 0) + count
+                except Exception as e:
+                    # TODO: fix this!
+                    pass
+
+        data_all['links'] = [{'source': user_id[pt0], 'target': user_id[pt1], 'weight': weight}
+                              for (pt0, pt1), weight in links.iteritems()]
 
     # output data
 
