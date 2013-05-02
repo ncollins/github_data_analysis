@@ -61,6 +61,10 @@ if __name__ == '__main__':
 
     W0, W1 = W[ordering[-1]], W[ordering[-2]]
     V0, V1 = V[:, ordering[-1]], V[:, ordering[-2]]
+    if abs(min(V0)) > max(V0):
+        V0 *= -1
+    if abs(min(V1)) > max(V1):
+        V1 *= -1
 
     for i, (f, c) in enumerate(top10):
         print(round(V0[i],1), '\t', round(V1[i],1), '\t', f)
