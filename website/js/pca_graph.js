@@ -12,7 +12,7 @@ function setupButtons() {
         .on('click', function(d) {
             d3.json("data/hackers_pca.json",
                 function(d) {
-                    draw(d, 'pc1', 'hs_collaboration');
+                    draw(d, 'total_collaboration', 'hs_collaboration');
                 })
             });
 
@@ -45,6 +45,16 @@ function draw(data, xval, yval) {
     var svg = document.getElementById('mainSVG')
     while (svg.lastChild) {
         svg.removeChild(svg.lastChild);
+    }
+
+    var hackersDiv = document.getElementById('hackers')
+    while (hackersDiv.lastChild) {
+        hackersDiv.removeChild(hackersDiv.lastChild);
+    }
+
+    var collaboratorsDiv = document.getElementById('collaborators')
+    while (collaboratorsDiv.lastChild) {
+        collaboratorsDiv.removeChild(collaboratorsDiv.lastChild);
     }
 
     d3.select('#graph')
