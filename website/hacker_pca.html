@@ -24,7 +24,8 @@
     </div>
     <script>
       setupButtons();
-      d3.json("data/hackers_pca.json", function(d) { draw(d, 'pc0', 'pc1') });
+      d3.json("data/hackers_pca.json",
+              function(d) { draw(d, 'pc0', 'pc1', 'Python', 'Javascript') });
     </script>
   </body>
 </html>
