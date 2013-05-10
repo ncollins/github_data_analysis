@@ -114,5 +114,5 @@ if __name__ == '__main__':
 
     json_data = json.dumps(data_all, indent=1)
 
-    with open('website/data/hackers_pca.json', 'w') as f:
+    with open('website/data/hacker_links.json', 'w') as f:
         f.write(json_data)
