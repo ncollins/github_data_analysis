@@ -15,13 +15,17 @@
   </head>
   <body>
     <div id="topimage" align="center"><img src="image/hs_blue_logo.png" /></div>
+    <button id="pcbutton">Principle Components</button>
+    <button id="contributionsbutton">Contributions</button>
     <div id="wrapper">
       <div id="hackers"></div>
-      <div id="graph"></div>
+      <div id="graph"><svg id='mainSVG'></svg></div>
       <div id="collaborators"></div>
     </div>
     <script>
-      d3.json("data/hackers_pca.json", draw);
+      setupButtons();
+      d3.json("data/hacker_links.json",
+              function(d) { draw(d, 'pc0', 'pc1', 'Python', 'Javascript') });
     </script>
   </body>
 </html>

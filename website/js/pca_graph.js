@@ -4,7 +4,7 @@ function setupButtons() {
         .on('click', function(d) {
             d3.json("data/hackers_pca.json",
                 function(d) {
-                    draw(d, 'pc0', 'pc1');
+                    draw(d, 'pc0', 'pc1', 'Python', 'Javascript');
                 })
             });
 
@@ -12,14 +12,15 @@ function setupButtons() {
         .on('click', function(d) {
             d3.json("data/hackers_pca.json",
                 function(d) {
-                    draw(d, 'total_collaboration', 'hs_collaboration');
+                    draw(d, 'total_collaboration', 'hs_collaboration',
+                        'Total Collaboration', 'Hacker School Collaboration');
                 })
             });
 
 }
 
 
-function draw(data, xval, yval) {
+function draw(data, xval, yval, xlab, ylab) {
     "use strict";
 
     // main body
@@ -77,6 +78,17 @@ function draw(data, xval, yval) {
     .attr('class', 'y axis')
     .attr('transform', 'translate(' + margin + ',0)')
     .call(y_axis);
+
+    d3.select('.x.axis')
+    .append('text')
+    .text(xlab)
+    .attr('x', function(){return (width / 2) - margin})
+    .attr('y', margin/1.5);
+
+     d3.select('.y.axis')
+    .append('text')
+    .text(ylab)
+    .attr('transform', "rotate (-90, -30, 0) translate(-240)")
 
     // pictures
     d3.select('#hackers')
