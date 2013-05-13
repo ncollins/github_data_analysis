@@ -12,6 +12,8 @@ import requests
 import login
 import hacker_school
 
+from collections import defaultdict
+
 user_url = 'https://api.github.com/users/{}'
 
 def get_page(url):
@@ -34,58 +36,74 @@ def get_pages(url, max_pages=100):
     return data, i
 
 
-if __name__ == '__main__':
-    group = hacker_school.groups['winter2013']
+def scrape_group(group):
+
     data = []
     for person in group:
+
         if person == 'hackerschool':
             user_page = get_page('https://api.github.com/orgs/hackerschool')
         else:
             user_page = get_page(user_url.format(person))
 
-        d = {}
-        d['login'] = person
-        d['url'] = user_page['html_url']
-        d['avatar_url'] = user_page.get('avatar_url', '')
-
         # followers
         if user_page['followers'] > 0:
             followers_url = user_page['followers_url'] + '?page={}'
             followers_json, _ = get_pages(followers_url)
-            followers = []
-            for follower in followers_json:
-                if follower['login'] in group:
-                    followers.append(follower['login'])
-            d['followers'] = followers
-            d['hs_followers_count'] = len(followers)
+
         else:
-            d['followers'] = []
-            d['hs_followers_count'] = 0
+            followers_json = []
+
+        # This should check all hacker schoolers, not just ones in the given group.
+        followers = [follower for follower in followers_json if follower['login'] in group] 
 
         # repos
         repos_url = user_page['repos_url'] + '?page={}'
         repos_json, _ = get_pages(repos_url)
-        d['repos'] = repos_json
+
+        total_forks = 0
+        own_repo_size = 0
+        own_repo_count = 0
+        langs = defaultdict(int)
+
         for repo in repos_json:
-            #print(repo)
-            size = repo['size']
             language = str(repo['language'])
-            fork = repo['fork']
-            forks = repo['forks']
-            if fork == True:
-                d['total_forks'] = d.get('total_forks', 0) + 1
+            if repo['fork'] == True:
+                total_forks += 1
             else:
-                d['own_repo_size'] = d.get('own_repo_size', 0) + size
-                d['lang:'+language] = d.get('lang:'+language, 0) + 1
-                d['own_repo_count'] = d.get('own_repo_count', 0) + 1
+                own_repo_size += repo['size']
+                own_repo_count += 1
+                langs[language] += 1
 
         # events
         events_url = user_page['events_url'].replace('{/privacy}','') + '?page={}'
         events_json, _ = get_pages(events_url)
-        d['events'] = events_json
 
-        # add to main json data
+        d = {
+            'login': person,
+            'url': user_page['html_url'],
+            'avatar_url': user_page.get('avatar_url', ''),
+            'followers': followers,
+            'hs_followers_count': len(followers),
+            'repos': repos_json,
+            'events': events_json,
+            'total_forks': total_forks,
+            'own_repo_size': own_repo_size,
+            'own_repo_count': own_repo_count
+            }
+
+        for language in langs.keys():
+            d["lang:"+language] = langs[language]
+
         data.append(d)
+
+    return data
+
+
+
+if __name__ == '__main__':
+    group = hacker_school.groups['winter2013']
+    data = scrape_group(group)
 
     with open('data/hackers.json', 'w') as f:
         f.write(json.dumps(data, indent=1))
