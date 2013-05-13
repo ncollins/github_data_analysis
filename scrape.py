@@ -35,8 +35,9 @@ def get_pages(url, max_pages=100):
 
 
 if __name__ == '__main__':
+    group = hacker_school.groups['winter2013']
     data = []
-    for person in hacker_school.people:
+    for person in group:
         if person == 'hackerschool':
             user_page = get_page('https://api.github.com/orgs/hackerschool')
         else:
@@ -53,7 +54,7 @@ if __name__ == '__main__':
             followers_json, _ = get_pages(followers_url)
             followers = []
             for follower in followers_json:
-                if follower['login'] in hacker_school.people:
+                if follower['login'] in group:
                     followers.append(follower['login'])
             d['followers'] = followers
             d['hs_followers_count'] = len(followers)
