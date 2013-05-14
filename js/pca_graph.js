@@ -30,8 +30,6 @@ function draw(data, xval, yval, xlab, ylab) {
         x_extent = d3.extent(data.nodes, function(d) { return d[xval] }),
         y_extent = d3.extent(data.nodes, function(d) { return d[yval] });
 
-    console.log(y_extent)
-
     var x_scale = d3.scale.sqrt()
         .range([margin, width-margin])
         .domain(x_extent);
