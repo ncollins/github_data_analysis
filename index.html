@@ -23,9 +23,7 @@
       <div id="collaborators"></div>
     </div>
     <script>
-      setupButtons();
-      d3.json("data/hacker_links.json",
-              function(d) { draw(d, 'pc0', 'pc1', 'Python', 'Javascript') });
+        d3.json("data/hacker_links.json", setup);
     </script>
   </body>
 </html>

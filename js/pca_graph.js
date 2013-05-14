@@ -1,5 +1,15 @@
-function setupButtons() {
-    
+function setup(data) {
+
+    d3.select('#hackers')
+        .selectAll('img')
+        .data(data.nodes)
+        .enter()
+        .append('img')
+        .attr('height', '30px')
+        .attr('width', '30px')
+        .attr('src', function(d) {return d.avatar_url})
+        .attr('title', function(d) {return d.login})
+
     d3.select('#pcbutton')
         .on('click', function(d) {
             d3.json("data/hacker_links.json",
@@ -16,6 +26,8 @@ function setupButtons() {
                         'Total Collaboration', 'Hacker School Collaboration');
                 })
             });
+
+     draw(data, 'pc0', 'pc1', 'Python', 'Javascript') 
 
 }
 
@@ -44,11 +56,6 @@ function draw(data, xval, yval, xlab, ylab) {
     var svg = document.getElementById('mainSVG')
     while (svg.lastChild) {
         svg.removeChild(svg.lastChild);
-    }
-
-    var hackersDiv = document.getElementById('hackers')
-    while (hackersDiv.lastChild) {
-        hackersDiv.removeChild(hackersDiv.lastChild);
     }
 
     var collaboratorsDiv = document.getElementById('collaborators')
@@ -89,13 +96,6 @@ function draw(data, xval, yval, xlab, ylab) {
     // pictures
     d3.select('#hackers')
         .selectAll('img')
-        .data(data.nodes)
-        .enter()
-        .append('img')
-        .attr('height', '30px')
-        .attr('width', '30px')
-        .attr('src', function(d) {return d.avatar_url})
-        .attr('title', function(d) {return d.login})
         .on('click', function(d) {selectHacker(d, data.links, data.nodes, xfunc, yfunc)}); 
 
     // nodes
