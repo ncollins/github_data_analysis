@@ -1,10 +1,10 @@
 Hacker School Github Data Analysis
 ==================================
 
-A project to analyse data from Github's API using Python and d3.js.
+A project to analyse Hacker Schooler colaboration habits on Github.
 
-The easiest way to check it out is to:
-- `cd` to the `website` directory, 
-- run `python -m SimpleHTTPServer 8000`,
-- go to `localhost:8000` in your web browser,
-- click on `hacker_pca.html`.
+It uses Python to scrape from the Github API and process the data,
+the scripts used for this are in the `scripts` directory.
+
+The processed data is visualized using d3.js, it can be viewed
+[here](https://ncollins.github.io/github_data_analysis).
