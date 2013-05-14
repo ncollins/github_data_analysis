@@ -2,7 +2,7 @@ function setupButtons() {
     
     d3.select('#pcbutton')
         .on('click', function(d) {
-            d3.json("data/hackers_pca.json",
+            d3.json("data/hacker_links.json",
                 function(d) {
                     draw(d, 'pc0', 'pc1', 'Python', 'Javascript');
                 })
@@ -10,7 +10,7 @@ function setupButtons() {
 
     d3.select('#contributionsbutton')
         .on('click', function(d) {
-            d3.json("data/hackers_pca.json",
+            d3.json("data/hacker_links.json",
                 function(d) {
                     draw(d, 'total_collaboration', 'hs_collaboration',
                         'Total Collaboration', 'Hacker School Collaboration');
