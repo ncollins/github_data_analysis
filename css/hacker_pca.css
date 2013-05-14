@@ -24,12 +24,18 @@ path {
     /*fill:none;
     stroke:black;*/
 }
-circle {
+
+circle.notselected {
     stroke:black;
     stroke-width:0.5px;
     fill:#cc0092;
 }
 
+circle.selected {
+    stroke:black;
+    stroke-width:0.5px;
+    /*fill:#cc0092;*/
+}
 /*
 path.line{
     stroke:navy;

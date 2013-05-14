@@ -107,6 +107,10 @@ function draw(data, xval, yval, xlab, ylab) {
 
 function selectHacker(hacker, links, nodes, xfunc, yfunc) {
 
+    nodes.forEach(function(n) {
+        n.current = (n.id == hacker.id);
+        });
+
     var id = hacker.id;
 
     var filteredlinks = links.filter(
@@ -114,6 +118,7 @@ function selectHacker(hacker, links, nodes, xfunc, yfunc) {
             );
 
     drawLinks(filteredlinks, nodes, xfunc, yfunc);
+    reDrawNodes({'nodes': nodes, 'links': links}, xfunc, yfunc);
 
     var hackerIDs = _.union(
             filteredlinks.map(function(l) {return l.source}),
@@ -189,9 +194,29 @@ function drawNodes(data, xfunc, yfunc) {
         .attr('cx', function(d) {return xfunc(d)})
         .attr('cy', function(d) {return yfunc(d)})
         .attr('r', function(d) {return 6})
+        .attr('class', function(d) {return 'notselected'})
         .on('click', function(d) {selectHacker(d, data.links, data.nodes, xfunc, yfunc)})
         .append("svg:title")
         .text(function(d) { return d.login; });
 
 }
 
+
+function reDrawNodes(data, xfunc, yfunc) {
+    
+    d3.select('svg')
+        .selectAll('circle')
+        .data(data.nodes)
+        .transition()
+        .duration(1000)
+        .attr('cx', function(d) {return xfunc(d)})
+        .attr('cy', function(d) {return yfunc(d)})
+        .attr('r', function(d) {return 6})
+        .attr('class', function(d) {
+            if (d.current) {
+               return 'selected'
+            }
+           return 'notselected'
+        });
+
+}
