@@ -58,9 +58,7 @@ function draw(data, xval, yval, xlab, ylab) {
         collaboratorsDiv.removeChild(collaboratorsDiv.lastChild);
     }
 
-    d3.select('#graph')
-        .append('svg')
-        .attr('id', 'mainSVG')
+    d3.select('#mainSVG')
         .attr('width', width)
         .attr('height', height);
 
