@@ -110,10 +110,10 @@ function draw(data, xval, yval, xlab, ylab) {
 function selectHacker(hacker, links, nodes, xfunc, yfunc) {
 
     var id = hacker.id;
-    var filteredlinks = _.filter(links,
-            function(l) {
-                return l.source == id || l.target == id;
-            });
+
+    var filteredlinks = links.filter(
+            function(l) {return l.source == id || l.target == id}
+            );
 
     drawLinks(filteredlinks, nodes, xfunc, yfunc);
 
