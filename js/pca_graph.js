@@ -118,8 +118,9 @@ function selectHacker(hacker, links, nodes, xfunc, yfunc) {
     drawLinks(filteredlinks, nodes, xfunc, yfunc);
 
     var hackerIDs = _.union(
-            _.map(filteredlinks, function(l) {return l.source}),
-            _.map(filteredlinks, function(l) {return l.target}));
+            filteredlinks.map(function(l) {return l.source}),
+            filteredlinks.map(function(l) {return l.target})
+            );
 
     hackerIDs = [id].concat(_.without(hackerIDs, id));
 
