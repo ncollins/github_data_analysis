@@ -1,7 +1,7 @@
 var d3 = d3;
 
 function setup(data) {
-    'use strict';
+    "use strict";
 
     d3.select('#hackers')
         .selectAll('img')
@@ -111,6 +111,7 @@ function draw(data, xval, yval, xlab, ylab) {
 
 
 function selectHacker(hacker, links, nodes, xfunc, yfunc) {
+    "use strict";
 
     nodes.forEach(function (n) {
         n.current = (n.id === hacker.id);
@@ -190,6 +191,7 @@ function drawLinks(links, nodes, xfunc, yfunc) {
 
 
 function drawNodes(data, xfunc, yfunc) {
+    "use strict";
 
     d3.select('svg')
         .selectAll('circle')
@@ -210,7 +212,8 @@ function drawNodes(data, xfunc, yfunc) {
 
 
 function reDrawNodes(data, xfunc, yfunc) {
-    
+    "use strict";
+
     d3.select('svg')
         .selectAll('circle')
         .data(data.nodes)
