@@ -1,4 +1,5 @@
-var d3 = d3;
+/*global d3, _ */
+/*jslint browser: true*/
 
 function setup(data) {
     "use strict";
@@ -38,30 +39,34 @@ function setup(data) {
 function draw(data, xval, yval, xlab, ylab) {
     "use strict";
 
-    // main body
-    var margin = 50,
-        height = 400,
-        width = 600,
-        x_extent = d3.extent(data.nodes, function (d) { return d[xval]; }),
-        y_extent = d3.extent(data.nodes, function (d) { return d[yval]; });
+    var margin, height, width, x_extent, y_extent,
+        x_scale, y_scale, xfunc, yfunc, svg,
+        collaboratorsDiv, x_axis, y_axis;
 
-    var x_scale = d3.scale.sqrt()
+    // main body
+    margin = 50;
+    height = 400;
+    width = 600;
+    x_extent = d3.extent(data.nodes, function (d) { return d[xval]; });
+    y_extent = d3.extent(data.nodes, function (d) { return d[yval]; });
+
+    x_scale = d3.scale.sqrt()
         .range([margin, width - margin])
         .domain(x_extent);
 
-    var y_scale = d3.scale.sqrt()
+    y_scale = d3.scale.sqrt()
         .range([height - margin, margin]) // margin-height to reverse direction
         .domain(y_extent);
 
-    var xfunc = function (d) { return x_scale(d[xval]); };
-    var yfunc = function (d) { return y_scale(d[yval]); };
+    xfunc = function (d) { return x_scale(d[xval]); };
+    yfunc = function (d) { return y_scale(d[yval]); };
 
-    var svg = document.getElementById('mainSVG');
+    svg = document.getElementById('mainSVG');
     while (svg.lastChild) {
         svg.removeChild(svg.lastChild);
     }
 
-    var collaboratorsDiv = document.getElementById('collaborators')
+    collaboratorsDiv = document.getElementById('collaborators');
     while (collaboratorsDiv.lastChild) {
         collaboratorsDiv.removeChild(collaboratorsDiv.lastChild);
     }
@@ -70,8 +75,8 @@ function draw(data, xval, yval, xlab, ylab) {
         .attr('width', width)
         .attr('height', height);
 
-    var x_axis = d3.svg.axis().scale(x_scale);
-    var y_axis = d3.svg.axis().scale(y_scale).orient('left');
+    x_axis = d3.svg.axis().scale(x_scale);
+    y_axis = d3.svg.axis().scale(y_scale).orient('left');
 
     d3.select('svg')
         .append('g')
@@ -91,7 +96,7 @@ function draw(data, xval, yval, xlab, ylab) {
         .attr('x', function () { return (width / 2) - margin; })
         .attr('y', margin / 1.5);
 
-     d3.select('.y.axis')
+    d3.select('.y.axis')
         .append('text')
         .text(ylab)
         .attr('transform', "rotate (-90, -30, 0) translate(-240)");
@@ -113,27 +118,29 @@ function draw(data, xval, yval, xlab, ylab) {
 function selectHacker(hacker, links, nodes, xfunc, yfunc) {
     "use strict";
 
+    var id, hackerIDs, hackers, divs, filteredlinks;
+
     nodes.forEach(function (n) {
         n.current = (n.id === hacker.id);
     });
 
-    var id = hacker.id;
+    id = hacker.id;
 
-    var filteredlinks = links.filter(
-            function (l) { return l.source === id || l.target === id; }
-        );
+    filteredlinks = links.filter(
+        function (l) { return l.source === id || l.target === id; }
+    );
 
     drawLinks(filteredlinks, nodes, xfunc, yfunc);
     reDrawNodes({'nodes': nodes, 'links': links}, xfunc, yfunc);
 
-    var hackerIDs = _.union(
-            filteredlinks.map(function (l) { return l.source; }),
-            filteredlinks.map(function (l) { return l.target; })
-        );
+    hackerIDs = _.union(
+        filteredlinks.map(function (l) { return l.source; }),
+        filteredlinks.map(function (l) { return l.target; })
+    );
 
     hackerIDs = [id].concat(_.without(hackerIDs, id));
 
-    var hackers = _.map(hackerIDs, function (n) { return nodes[n]; });
+    hackers = _.map(hackerIDs, function (n) { return nodes[n]; });
 
     d3.select('#collaborators')
         .selectAll('div')
@@ -141,7 +148,7 @@ function selectHacker(hacker, links, nodes, xfunc, yfunc) {
         .exit()
         .remove();
 
-    var divs = d3.select('#collaborators')
+    divs = d3.select('#collaborators')
             .selectAll('div')
             .data(hackers)
             .enter()
@@ -167,6 +174,7 @@ function selectHacker(hacker, links, nodes, xfunc, yfunc) {
 
 
 function drawLinks(links, nodes, xfunc, yfunc) {
+    "use strict";
 
     var lines = d3.select('svg')
         .selectAll('line')
@@ -174,7 +182,7 @@ function drawLinks(links, nodes, xfunc, yfunc) {
         .exit()
         .remove();
 
-    var lines = d3.select('svg')
+    lines = d3.select('svg')
         .selectAll('line')
         .data(links)
         .enter()
