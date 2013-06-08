@@ -1,10 +1,8 @@
 Hacker School Github Data Analysis
 ==================================
 
-A project to analyse Hacker Schooler colaboration habits on Github.
+A project to analyse Hacker Schooler collaboration habits on Github.
 
-It uses Python to scrape from the Github API and process the data,
-the scripts used for this are in the `scripts` directory.
+Python scrapes the Github API and processes the data. (Code located in the `scripts` directory)
 
-The processed data is visualized using d3.js, it can be viewed
-[here](http://ncollins.github.io/github_data_analysis).
+The processed data is visualized using d3.js and can be viewed [here](http://ncollins.github.io/github_data_analysis).
