@@ -5,16 +5,16 @@
     <meta charset="utf-8">
 
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css' />
-    <link type="text/css" href="css/hacker_pca.css" rel="stylesheet" />
+    <link type="text/css" href="static/css/hacker_pca.css" rel="stylesheet" />
 
-    <script type="text/javascript" src="jslib/d3.js"></script>
-    <script type="text/javascript" src="jslib/underscore-min.js"></script>
+    <script type="text/javascript" src="static/jslib/d3.js"></script>
+    <script type="text/javascript" src="static/jslib/underscore-min.js"></script>
 
-    <script type="text/javascript" src="js/pca_graph.js"></script>
+    <script type="text/javascript" src="static/js/pca_graph.js"></script>
 
   </head>
   <body>
-    <div id="topimage" align="center"><img src="image/hs_blue_logo.png" /></div>
+    <div id="topimage" align="center"><img src="static/image/hs_blue_logo.png" /></div>
     <button id="pcbutton">Principal Components</button>
     <button id="contributionsbutton">Contributions</button>
     <div id="wrapper">
@@ -23,7 +23,7 @@
       <div id="collaborators"></div>
     </div>
     <script>
-        d3.json("data/hacker_links.json", setup);
+        d3.json("static/data/hacker_links.json", setup);
     </script>
   </body>
 </html>
