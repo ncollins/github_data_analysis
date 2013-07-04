@@ -206,8 +206,8 @@ function drawNodes(data, xfunc, yfunc) {
         .data(data.nodes)
         .enter()
         .append('circle')
-        .attr('cx', xfunc })
-        .attr('cy', yfunc })
+        .attr('cx', xfunc )
+        .attr('cy', yfunc )
         .attr('r', function (d) { return 6; })
         .attr('class', function (d) { return 'notselected'; })
         .on('click', function (d) {
