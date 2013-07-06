@@ -97,6 +97,7 @@ function setup_chord(data) {
     var matrix2chord = d3.layout.chord().padding(.05).sortSubgroups(d3.descending).matrix,
         chord = matrix2chord(matrix);
 
+    function draw_chords(chord) {
     svg.append("g")
         .attr("class", "groups")
         .selectAll("g")
@@ -159,6 +160,7 @@ function setup_chord(data) {
         .attr("d", d3.svg.chord().radius(innerRadius))
         .style("fill", function(d) { return fill(d.target.index); })
         .style("opacity", 1);
+    }
 
     // selection callback
 
@@ -176,6 +178,9 @@ function setup_chord(data) {
             chord = matrix2chord(matrix);
 
         plot_avatars(chord.groups());
+        svg.selectAll('.group').remove();
+        svg.selectAll('.chords').remove();
+        draw_chords(chord);
     }
 
     // AVATARS
@@ -251,5 +256,6 @@ function setup_chord(data) {
     }
 
     plot_avatars(chord.groups());
+    draw_chords(chord);
 
 }
