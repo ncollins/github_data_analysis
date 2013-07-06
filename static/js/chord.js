@@ -163,7 +163,10 @@ function setup_chord(data) {
     // selection callback
 
     function select(d) {
-        d.selected = true;
+        d.selected = !d.selected;
+        console.log('selected: ' + d.login);
+        var selected_hackers = _.filter(hackers, function (d) { return d.selected });
+        console.log('now ' + selected_hackers.length + ' are selected!');
         redraw();
     }
 
@@ -171,6 +174,8 @@ function setup_chord(data) {
         var selected_hackers = _.filter(hackers, function (d) { return d.selected }),
             matrix = connection_matrix(selected_hackers),
             chord = matrix2chord(matrix);
+
+        plot_avatars(chord.groups());
     }
 
     // AVATARS
@@ -200,22 +205,49 @@ function setup_chord(data) {
         }
     }
 
+    var first_time = true;
+
     function plot_avatars(groups) {
 
-        layout_avatars(hackers, groups)
+        layout_avatars(hackers, groups);
 
-        svg.selectAll(".mugshots")
-            .data(hackers)
-            .enter()
-            .append("svg:circle")
-            .attr("cx", function (d) {return d.x})
-            .attr("cy", function (d) {return d.y})
-            .attr("r", 15)
-            .attr("stroke", "black")
-            .attr("stroke-width", 2)
-            .attr("fill", function (d) {
-                return "url(#avatar-" + d.login + ")";
-            });
+
+        if (first_time) {
+            svg.selectAll(".mugshot")
+                .data(hackers)
+                .enter()
+                .append("svg:circle")
+                .attr("class", "mugshot")
+                .attr("cx", function (d) {return d.x})
+                .attr("cy", function (d) {return d.y})
+                .attr("r", 15)
+                .attr("stroke", "black")
+                .attr("stroke-width", 2)
+                .attr("fill", function (d) {
+                    return "url(#avatar-" + d.login + ")";
+                })
+            .on('click', select);
+            first_time = false;
+        }
+        else {
+            console.log('TRANSITION!');
+            svg.selectAll(".mugshot")
+                .data(hackers)
+                .transition()
+                .duration(2000)
+                //.append("svg:circle")
+                .attr("cx", function (d) {console.log(d.x);return d.x})
+                .attr("cy", function (d) {return d.y})
+                .attr("r", 15)
+                .attr("stroke", "black")
+                .attr("stroke-width", 2)
+                .attr("fill", function (d) {
+                    return "url(#avatar-" + d.login + ")";
+                })
+            //.on('click', select);
+            ;
+        }
+
     }
 
     plot_avatars(chord.groups());
